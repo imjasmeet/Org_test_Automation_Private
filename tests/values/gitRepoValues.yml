@@ -1,5 +1,7 @@
 GitHub:
   Org_test_Automation:
+    path: jfbetapipeorg/Org_test_Automation
+  Org_test_Automation_Private:
     path: jfbetapipeorg/Org_test_Automation_Private
   Org_test_Automation_bash:
     path: jfbetapipeorg/Org_test_Automation_bash
