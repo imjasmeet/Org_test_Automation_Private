@@ -1,0 +1,28 @@
+template: true
+valuesFilePath: ../values/gitRepoValues.yml
+
+resources:
+  - name: R_PS_GitRepo_6351_001_git_repo
+    type: GitRepo
+    configuration:
+      path: {{ .Values.GitHub.Org_test_Automation_Private.path }}
+      branches:
+        include: main
+      gitProvider: s_gitHub
+      cloneProtocol: https
+
+pipelines:
+  - name: R_PS_GitRepo_6351_001
+    configuration:
+      nodePool: win_2019
+    steps:
+      - name: R_PS_GitRepo_6351_001_1
+        type: PowerShell
+        configuration:
+          inputResources:
+            - name: R_PS_GitRepo_6351_001_git_repo
+        execution:
+          onExecute:
+            - pushd ${res_R_PS_GitRepo_6351_001_git_repo_resourcePath}
+            - dir
+            - popd
