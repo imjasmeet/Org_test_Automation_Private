@@ -1,0 +1,8 @@
+pipelines:
+  - name: P_PS_GITHUB_4650_0001
+    steps:
+      - name: P_PS_GITHUB_S_4650_0001
+        type: Bash
+        execution:
+          onExecute:
+            - printenv
